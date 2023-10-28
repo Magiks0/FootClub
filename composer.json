@@ -1,0 +1,15 @@
+{
+    "name": "admin/foot-club",
+    "autoload": {
+        "psr-4": {
+            "Admin\\FootClub\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lucas Dupas",
+            "email": "dupaslucas8@gmail.com"
+        }
+    ],
+    "require": {}
+}
