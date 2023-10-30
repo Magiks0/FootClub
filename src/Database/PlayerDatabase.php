@@ -18,10 +18,16 @@ final readonly class PlayerDatabase
         $playerName = $player->getFirstName();
         $playerLastName = $player->getLastName();
         $playerBirthdate = $player->getBirthdate();
+    
+        // Utilisez bindParam pour lier les variables par référence
         $request->bindParam('name', $playerName);
         $request->bindParam('lastname', $playerLastName);
-        $request->bindParam('birthdate', $playerBirthdate->format('Y-m-d'));
-
+    
+        // Stockez la valeur de birthdate dans une variable
+        $birthdateValue = $playerBirthdate->format('Y-m-d');
+    
+        $request->bindParam('birthdate', $birthdateValue);
+    
         return $request->execute();
     }
 
