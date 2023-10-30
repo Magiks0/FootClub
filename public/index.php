@@ -1,6 +1,6 @@
 <?php
 
-require '../vendor/autoload.php';
+require '../config/autoloader.php';
 require '../config/parameters.php';
 require '../config/routes.php';
 
