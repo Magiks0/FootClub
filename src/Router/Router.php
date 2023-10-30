@@ -29,7 +29,7 @@ class Router
                     throw new \Exception(sprintf('No route action found to resolve "%s", action "%s" was not found in Controller "%s".', $_SERVER["PATH_INFO"], $route->getActionName(), $route->getControllerName()));
                 }
 
-                return $instance->$action();
+            return $instance->$action();
             }
         }
 
