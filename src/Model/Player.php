@@ -82,7 +82,7 @@ class Player {
     
     public static function fromArray(array $data): static
     {
-        $player = new Player($data['lastname'], $data['firstname'], $data['birthdate']);
+        $player = new Player($data['lastname'], $data['firstname'], new \DateTime($data['birthdate']));
         $player->setId($data['id']);
         
         return $player;
