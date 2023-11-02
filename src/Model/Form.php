@@ -130,6 +130,17 @@ public function ajoutInput(string $type, string $nom, array $attributs = []):sel
     return $this;
 }
 
+public function ajoutFilledInput(string $type, string $nom, string $attributs):self
+{
+    // On ouvre la balise
+    $this->formCode .= "<input type='$type' name='$nom'";
+
+    // On ajoute les attributs
+    $this->formCode .= $attributs.'>';
+
+    return $this;
+}
+
 /**
  * Ajoute un champ textarea
  * @param string $nom Nom du champ
@@ -193,6 +204,20 @@ public function ajoutBouton(string $texte, array $attributs = []):self
 
     // On ajoute le texte et on ferme
     $this->formCode .= ">$texte</button>";
+
+    return $this;
+}
+
+public function ajoutRetour(string $texte, string $lienRetour):self
+{
+    // On ouvre le bouton
+    $this->formCode .= '<a href=';
+
+    // On ajoute les attributs
+    $this->formCode .= $lienRetour;
+
+    // On ajoute le texte et on ferme
+    $this->formCode .= ">$texte</a>";
 
     return $this;
 }

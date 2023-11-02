@@ -4,10 +4,23 @@
 
 <ul>
 <?php
-
-foreach ($players as $player) {
-    echo '<li>'.$player->getFirstName()." ".$player->getLastName()." ".$player->getBirthdate()->format('d-m-Y').'</li>';
-}
+foreach ($players as $player) {?>
+    <div class="playerInfos">
+        <div class="playerPicture">
+            <img src="assets" alt="photo_joueur_<?= $player->getLastName()?>">
+        </div>
+        <div class="playerNames">
+            <p><?= $player->getFirstName()." ".$player->getLastName()?></p>
+        </div>
+        <div class="playerBirth">
+            <p>Née le: <?= $player->getBirthDate()->format('d-m-Y')?></p>
+        </div>
+        <div>
+            <button>Supprimer</button>
+            <a href="modif?id=<?= $player->getId()?>">Modifier</a>
+        </div>
+    </div>
+<?php } ?>
 
 ?>
 </ul>
