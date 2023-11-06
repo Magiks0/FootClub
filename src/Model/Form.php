@@ -47,7 +47,7 @@ private function ajoutAttributs(array $attributs): string
     $str = '';
 
     // On liste les attributs "courts"
-    $courts = ['checked', 'disabled', 'readonly', 'multiple', 'required', 'autofocus', 'novalidate', 'formnovalidate'];
+    $courts = ['checked', 'disabled', 'readonly', 'multiple', 'required', 'autofocus', 'novalidate', 'formnovalidate', 'selected'];
 
     // On boucle sur le tableau d'attributs
     foreach($attributs as $attribut => $valeur){
@@ -178,8 +178,8 @@ public function ajoutSelect(string $nom, array $options, array $attributs = []):
     $this->formCode .= $attributs ? $this->ajoutAttributs($attributs).'>' : '>';
 
     // On ajoute les options
-    foreach($options as $valeur => $texte){
-        $this->formCode .= "<option value='$valeur'>$texte</option>";
+    foreach($options as $valeur){
+        $this->formCode .= "<option value ='$valeur[0]'>$valeur[1]</option>";
     }
 
     // On ferme le select
@@ -187,6 +187,7 @@ public function ajoutSelect(string $nom, array $options, array $attributs = []):
 
     return $this;
 }
+
 
 /**
  * Ajoute un bouton

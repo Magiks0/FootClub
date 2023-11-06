@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+
 class Player {
     private int $id;
     private string $lastName; // Changed from $nom
@@ -10,6 +11,7 @@ class Player {
     // private string $photo;
 
     // ##### NEED TO add array that shows the teams associated with this player (without using PlayerHasTeam)
+    private array $playerHasTeam = [];
 
     public function __construct(
         string $lastName, // Changed from $nom
@@ -84,7 +86,14 @@ class Player {
     {
         $player = new Player($data['lastname'], $data['firstname'], new \DateTime($data['birthdate']));
         $player->setId($data['id']);
+
         
         return $player;
+    }
+
+
+    public function addTeamToPlayer(Team $team)
+    {
+        array_push($this->playerHasTeam, $team);
     }
 }

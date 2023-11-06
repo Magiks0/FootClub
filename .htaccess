@@ -1,4 +1,10 @@
 RewriteEngine On
 
+# Allow direct access to the assets and styles folders
+RewriteRule ^public/assets/ - [L]
+RewriteRule ^public/styles/ - [L]
+RewriteRule ^public/scripts/ - [L]
 
-RewriteRule ^(.*)$ public/index.php
+# Redirect requests to the public folder
+RewriteRule ^(.*)$ public/index.php [L]
+

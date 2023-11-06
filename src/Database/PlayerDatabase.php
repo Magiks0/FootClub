@@ -11,7 +11,7 @@ final readonly class PlayerDatabase
         return 'player';
     }
 
-    public static function add(Player $player): bool
+    public static function add(Player $player): int
     {
         $connexion = Database::Connect();
         $request = $connexion->prepare('INSERT INTO player (firstname, lastname, birthdate) VALUES (:name, :lastname, :birthdate);');
@@ -27,15 +27,21 @@ final readonly class PlayerDatabase
         $birthdateValue = $playerBirthdate->format('Y-m-d');
 
         $request->bindParam('birthdate', $birthdateValue);
-
-        return $request->execute();
+        if($request->execute()){
+            return $connexion->lastInsertId();
+        }else{
+            return 0;
+        }
     }
 
     public static function findAll(): array
     {
         $connection = Database::Connect();
 
-        $query = sprintf("SELECT * FROM player ORDER BY lastname;", self::databaseName());
+        $query = sprintf("  SELECT *
+                             FROM player P 
+                             ORDER BY lastname;", self::databaseName());
+
         $query = $connection->prepare($query);
         $query->execute();
 
@@ -46,7 +52,6 @@ final readonly class PlayerDatabase
         foreach ($results as $result) {
             $players[] = Player::fromArray($result);
         }
-
         return $players;
     }
 

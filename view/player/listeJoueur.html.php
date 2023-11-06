@@ -4,7 +4,7 @@
 
 <ul>
 <?php
-foreach ($players as $player) {?>
+foreach ($players as $player) { ?>
     <div class="playerInfos">
         <div class="playerPicture">
             <img src="assets" alt="photo_joueur_<?= $player->getLastName()?>">
@@ -22,5 +22,5 @@ foreach ($players as $player) {?>
     </div>
 <?php } ?>
 
-?>
-</ul>
+
+

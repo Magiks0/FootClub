@@ -10,4 +10,9 @@ class HomeController extends AbstractController
     {
         return $this->render('home/index.html.php');
     }
+
+    public function choice(): string
+    {
+        return $this->render('home/choixAjout.html.php');
+    }
 }

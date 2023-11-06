@@ -47,4 +47,6 @@ class PlayerHasTeam {
     public function setRole(string $role): void {
         $this->role = $role;
     }
+
+    
 }
