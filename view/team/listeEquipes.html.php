@@ -1,6 +1,6 @@
 <h1>Liste des équipes</h1>
 
-<a href="/FootClub/">Accueil</a>
+<a href="/">Accueil</a>
 
 <ul>
 <?php

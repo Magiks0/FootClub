@@ -3,5 +3,5 @@
     <a href="ajoutJoueur">un joueur</a>
     <a href="ajoutTeam">une équipe</a>
     <a href="ajoutMatch">un match</a>
-    <a href="/FootClub/">Annuler</a>
+    <a href="/">Annuler</a>
     </div>

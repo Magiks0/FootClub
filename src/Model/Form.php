@@ -22,7 +22,10 @@ public function create(){
  * @param array $fields Tableau listant les champs à vérifier
  * @return bool 
  */
-public static function validate(array $form, array $fields){
+
+
+ /** TODO: Externaliser */
+public static function validate(array $form, array $fields): bool{
     // On parcourt chaque champ
     foreach($fields as $field){
         // Si le champ est absent ou vide dans le tableau

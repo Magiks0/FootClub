@@ -9,16 +9,16 @@ use App\Controller\{
 };
 
 function registerRoutes(Router $router) {
-    $router->addRoute(new Route('/FootClub/', HomeController::class, 'index'));
-    $router->addRoute(new Route('/FootClub/choix', HomeController::class, 'choice'));
+    $router->addRoute(new Route('/', HomeController::class, 'index'));
+    $router->addRoute(new Route('/choix', HomeController::class, 'choice'));
 
-    $router->addRoute(new Route('/FootClub/players', PlayerController::class, 'index'));
-    $router->addRoute(new Route('/FootClub/ajoutJoueur', PlayerController::class, 'add'));
-    $router->addRoute(new Route('/FootClub/modif', PlayerController::class, 'modify'));
+    $router->addRoute(new Route('/players', PlayerController::class, 'index'));
+    $router->addRoute(new Route('/ajoutJoueur', PlayerController::class, 'add'));
+    $router->addRoute(new Route('/modif', PlayerController::class, 'modify'));
 
-    $router->addRoute(new Route('/FootClub/ajoutTeam', TeamController::class, 'add'));
-    $router->addRoute(new Route('/FootClub/teams', TeamController::class, 'liste'));
+    $router->addRoute(new Route('/ajoutTeam', TeamController::class, 'add'));
+    $router->addRoute(new Route('/teams', TeamController::class, 'liste'));
     
-    $router->addRoute(new Route('/FootClub/ajoutMatch', MatchController::class, 'add'));
-    $router->addRoute(new Route('/FootClub/matchs', MatchController::class, 'liste'));
+    $router->addRoute(new Route('/ajoutMatch', MatchController::class, 'add'));
+    $router->addRoute(new Route('/matchs', MatchController::class, 'liste'));
 }

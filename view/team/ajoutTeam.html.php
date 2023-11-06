@@ -1,2 +1,2 @@
-<a href="/FootClub/">Accueil</a>
+<a href="/">Accueil</a>
 <?= $formAjout ?>
