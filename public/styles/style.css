@@ -181,6 +181,11 @@ body {
   min-width: 100%;
 }
 
+.head-nav .ajout .add:hover{
+  background-color: rgb(1, 159, 1);
+}
+
+
 @media screen and (max-width: 768px) {
   .head-nav ul {
     margin-top: var(--pad/4);
